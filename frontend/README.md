@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+DRC Tower Map - Frontend Application
+This is the React frontend for the DRC Mobile Network Tower Mapping application.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Quick Start
 
-## Available Scripts
+# Install dependencies
+npm install
 
-In the project directory, you can run:
+# Start development server
+npm start
 
-### `npm start`
+# Build for production
+npm run build
+Folder Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+frontend/
+├── public/
+│   ├── data/
+│   │   └── tower-sites.json    # All tower data
+│   ├── logo.png                # Client logo
+│   └── index.html              # HTML template
+├── src/
+│   ├── components/
+│   │   ├── Map.js              # Main map component
+│   │   ├── SiteTable.js        # Data table
+│   │   ├── AddSiteForm.js      # Add new sites
+│   │   ├── ImportData.js       # Excel import
+│   │   ├── TrashBin.js         # Deleted items
+│   │   ├── LayerManager.js     # Layer controls
+│   │   └── DeleteModal.js      # Confirmation modal
+│   ├── App.js                  # Main app
+│   ├── App.css                 # Styles
+│   └── index.js                # Entry point
+└── package.json                # Dependencies
+Available Components
+Component	Description
+Map	Interactive Leaflet map with markers
+SiteTable	Comprehensive data table with sorting
+AddSiteForm	Form for adding new tower sites
+ImportData	Excel/CSV file import interface
+TrashBin	Manage deleted sites
+LayerManager	Toggle different data layers
+DeleteModal	Confirmation dialog
+Key Features Implemented
+Interactive DRC map with 3,500+ markers
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Dual icon styles (round dots / antenna icons)
 
-### `npm test`
+Filter by operator (7 operators)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Filter by province
 
-### `npm run build`
+Search by site name or SAP ID
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Add new sites with all fields
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Delete with trash bin
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Restore deleted items
 
-### `npm run eject`
+Permanent deletion
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Import Excel/CSV data
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Data table view
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Multiple map styles
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Responsive design
 
-## Learn More
+French interface
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Red/Blue/White theme
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Client logo integration
 
-### Code Splitting
+Dependencies
+json
+{
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-leaflet": "^4.2.1",
+  "leaflet": "^1.9.4",
+  "xlsx": "^0.18.5",
+  "react-scripts": "5.0.1"
+}
+Deployment
+Deploy to Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm run build
+# Drag and drop build folder to Netlify
+Deploy to Vercel
 
-### Analyzing the Bundle Size
+npm install -g vercel
+vercel
+Environment Variables
+Create .env file:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+REACT_APP_MAP_CENTER="-2.5,23.5"
+REACT_APP_DEFAULT_ZOOM="6"
+Available Scripts
+Script	Description
+npm start	Start dev server at localhost:3000
+npm run build	Build for production
+npm test	Run tests
+npm run eject	Eject from Create React App
+© 2026 ARPTC - République Démocratique du Congo
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
